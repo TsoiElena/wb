@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 import {useState} from "react";
 
 export const App = () => {
-    const [value, setValue] = useState('Выберите из страну')
+    const [value, setValue] = useState('Выберите страну')
     console.log({ COUNTRIES });
 
   return (
