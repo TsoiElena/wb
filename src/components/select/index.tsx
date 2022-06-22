@@ -17,8 +17,6 @@ export const Select = ({countries, value, setValue}: Props) => {
     }, [search])
     // @ts-ignore
     const handleChange = (event) => {
-        event.preventDefault()
-        console.log(event)
         setValue(event.target.innerText)
         setSearch('')
         setOptions(countries)
@@ -40,7 +38,6 @@ export const Select = ({countries, value, setValue}: Props) => {
                         <input className={styles.select__input} type="text" value={search}
                                onChange={(e) => setSearch(e.target.value)}/>
                         {options && options.map((option, index) => {
-                            console.log(option.includes(value.split(' ')[0]), option, value)
                             return (
                                 <li className={option.includes(value.split(' ')[0]) ? styles.select__option_selected : styles.select__option}
                                     key={index} onClick={(e) => handleChange(e)}> {option}
